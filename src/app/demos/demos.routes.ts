@@ -79,6 +79,16 @@ export const DEMO_ROUTES: Routes = [
       import('./toggle/toggle-demo').then((m) => m.ToggleDemo),
   },
   {
+    path: 'action-sheet',
+    loadComponent: () =>
+      import('./action-sheet/action-sheet-demo').then((m) => m.ActionSheetDemo),
+  },
+  {
+    path: 'modal',
+    loadComponent: () =>
+      import('./modal/modal-demo').then((m) => m.ModalDemo),
+  },
+  {
     path: '**',
     redirectTo: '/home',
   },
