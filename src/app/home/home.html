@@ -1,6 +1,14 @@
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-title>Ionic Components</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="themeService.togglePlatform()" [attr.aria-label]="themeService.platform() === 'ios' ? 'Switch to Android' : 'Switch to iOS'">
+        <ion-icon slot="icon-only" [name]="themeService.platform() === 'ios' ? 'logo-android' : 'logo-apple'" aria-hidden="true" />
+      </ion-button>
+      <ion-button (click)="themeService.toggleTheme()" [attr.aria-label]="themeService.theme() === 'light' ? 'Switch to dark mode' : 'Switch to light mode'">
+        <ion-icon slot="icon-only" [name]="themeService.theme() === 'light' ? 'moon-outline' : 'sunny-outline'" aria-hidden="true" />
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

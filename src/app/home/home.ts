@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
+  IonButton,
+  IonButtons,
   IonContent,
   IonHeader,
   IonIcon,
@@ -19,20 +21,27 @@ import {
   checkboxOutline,
   createOutline,
   listOutline,
+  logoAndroid,
+  logoApple,
+  moonOutline,
   notificationsOutline,
   optionsOutline,
   pricetagOutline,
   pricetagsOutline,
   radioButtonOnOutline,
+  sunnyOutline,
   syncOutline,
   toggleOutline,
 } from 'ionicons/icons';
 import { COMPONENT_REGISTRY } from '../shared/component-registry';
+import { PlatformThemeService } from '../shared/platform-theme.service';
 
 @Component({
   selector: 'app-home',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
+    IonButton,
+    IonButtons,
     IonContent,
     IonHeader,
     IonIcon,
@@ -48,6 +57,7 @@ import { COMPONENT_REGISTRY } from '../shared/component-registry';
 })
 export class HomePage {
   protected readonly components = COMPONENT_REGISTRY;
+  protected readonly themeService = inject(PlatformThemeService);
 
   constructor() {
     addIcons({
@@ -58,11 +68,15 @@ export class HomePage {
       'checkbox-outline': checkboxOutline,
       'create-outline': createOutline,
       'list-outline': listOutline,
+      'logo-android': logoAndroid,
+      'logo-apple': logoApple,
+      'moon-outline': moonOutline,
       'notifications-outline': notificationsOutline,
       'options-outline': optionsOutline,
       'pricetag-outline': pricetagOutline,
       'pricetags-outline': pricetagsOutline,
       'radio-button-on-outline': radioButtonOnOutline,
+      'sunny-outline': sunnyOutline,
       'sync-outline': syncOutline,
       'toggle-outline': toggleOutline,
     });

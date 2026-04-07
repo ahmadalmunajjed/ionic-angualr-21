@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { PlatformThemeService } from './shared/platform-theme.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,6 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('ionic-angualr-21');
+  protected readonly themeService = inject(PlatformThemeService);
 }
+
